@@ -1,1 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Five Crown Safety Supply</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{margin:0;font-family:Arial,sans-serif;color:#222}
+
+header{background:#20252b;color:white;padding:22px;text-align:center}
+
+header h1{margin:5px 0;font-size:26px}
+
+.crowns{color:#ffce00;font-size:27px}
+
+nav{background:#ffce00;padding:14px;text-align:center}
+
+nav a{color:#171717;font-weight:bold;margin:0 10px;text-decoration:none}
+
+.hero{background:#303740;color:white;text-align:center;padding:55px 18px}
+
+.hero h2{font-size:34px;margin:0}
+
+.hero strong{color:#ffce00}
+
+.btn{background:#ffce00;color:#111;border:0;padding:12px 18px;border-radius:5px;font-weight:bold;cursor:pointer}
+
+section{padding:28px 18px;max-width:1100px;margin:auto}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+
+.card{border:1px solid #ddd;border-radius:9px;padding:16px}
+
+.photo{background:#f1f2f4;text-align:center;font-size:55px;padding:22px}
+
+.price{font-size:21px;font-weight:bold}
+
+small{color:#666}
+
+input{padding:10px;width:100%;margin:10px 0;font-size:16px}
+
+footer{background:#20252b;color:white;text-align:center;padding:25px}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="crowns">♛ ♛ ♛ ♛ ♛</div>
+
+<h1>FIVE CROWN SAFETY SUPPLY</h1>
+
+<p>Protection You Can Count On.</p>
+
+</header>
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#products">Products</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="hero" id="home">
+
+<h2>INDUSTRIAL <strong>SAFETY SUPPLIES</strong></h2>
+
+<p>Retail • Wholesale • Contractor Supplies</p>
+
+<p>Safety equipment and workplace essentials for businesses and individuals.</p>
+
+<a href="#products"><button class="btn">SHOP PRODUCTS</button></a>
+
+</div>
+
+<section id="products">
+
+<h2>Shop Products</h2>
+
+<p>Browse our developing product catalog.</p>
+
+<input id="search" placeholder="Search products..." oninput="render()">
+
+<div class="grid" id="catalog"></div>
+
+</section>
+
+<section id="about">
+
+<h2>About Us</h2>
+
+<p>Five Crown Safety Supply is a developing Hispanic-owned industrial safety supply business based in New York.</p>
+
+<p><b>Founder & Owner:</b> Jorge Santana Jr.</p>
+
+<p><b>CEO:</b> Gracie Santana Lopez</p>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact & Order Inquiries</h2>
+
+<p>Contact information and ordering services coming soon.</p>
+
+<p>Bulk orders and custom logo safety vests will be available by quote after supplier confirmation.</p>
+
+</section>
+
+<footer>
+
+<b>Five Crown Safety Supply</b>
+
+<p>Bronx, New York</p>
+
+<p>Protection You Can Count On.</p>
+
+</footer>
+
+<script>
+
+const products=[
+
+["Terry Cloth Rags","🧺",18.99],
+
+["Safety Glasses","🥽",4.99],
+
+["Reflective Safety Vest","🦺",10.99],
+
+["Industrial Work Gloves","🧤",5.49],
+
+["Contractor Markers","🖊️",2.99],
+
+["Paint Markers","🖍️",5.99],
+
+["Glove Holders","🔗",3.49],
+
+["Custom Logo Safety Vests","🦺",14.99],
+
+["18-Inch Safety Cones","🚧",15.99],
+
+["28-Inch Safety Cones","🚧",27.99],
+
+["Safety Barriers","🚧",89.99],
+
+["Retractable Barriers","🚧",49.99],
+
+["32-Gallon Trash Cans","🗑️",39.99],
+
+["44-Gallon Trash Cans","🗑️",54.99],
+
+["33-Gallon Can Liners","🗑️",29.99],
+
+["Contractor Trash Bags","🗑️",39.99]
+
+];
+
+function render(){
+
+let q=document.getElementById("search").value.toLowerCase();
+
+document.getElementById("catalog").innerHTML=products
+
+.filter(p=>p[0].toLowerCase().includes(q))
+
+.map((p,i)=>`
+
+<div class="card">
+
+<div class="photo">${p[1]}</div>
+
+<h3>${p[0]}</h3>
+
+<small>Sample retail price</small>
+
+<p class="price">$${p[2].toFixed(2)}</p>
+
+<label>Quantity</label>
+
+<input type="number" min="1" value="1"
+
+oninput="update(this,${p[2]})">
+
+<p class="total">Estimated total: $${p[2].toFixed(2)}</p>
+
+<small>12+ units: 12% discount<br>
+
+50+ units: 22% discount<br>
+
+100+ units: 30% discount</small>
+
+<p><small>Supplier availability pending</small></p>
+
+<button class="btn" disabled>Order Inquiry Coming Soon</button>
+
+</div>`).join("");
+
+}
+
+function update(el,base){
+
+let qty=Math.max(1,Math.floor(Number(el.value)||1));
+
+let discount=qty>=100?.30:qty>=50?.22:qty>=12?.12:0;
+
+let unit=Math.round(base*(1-discount)*100)/100;
+
+el.parentElement.querySelector(".total").textContent=
+
+"Estimated total: $"+(unit*qty).toFixed(2)+
+
+" ($"+unit.toFixed(2)+"/unit)";
+
+}
+
+render();
+
+</script>
+
+</body>
+
+</html>
+
 
