@@ -283,7 +283,144 @@ footer{background:#20252b;color:white;text-align:center;padding:25px}
 
 <h2>Contact & Order Inquiries</h2>
 
-<p>Contact information and ordering services coming soon.</p>
+
+<section id="contact" style="background:#f7f7f7; padding:55px 20px; color:#20252b;">
+  <div style="max-width:800px; margin:auto;">
+
+    <h2 style="text-align:center;">
+      Contact &amp; Order Inquiries
+    </h2>
+
+    <p style="text-align:center;">
+      Thank you for choosing Five Crown Safety Supply!
+      We welcome retail, wholesale, and contractor
+      inquiries. Contact our sales team for product
+      information, bulk pricing, custom safety products,
+      and order requests.
+    </p>
+
+    <div style="background:#20252b; color:white;
+                padding:22px; border-radius:12px;
+                text-align:center; margin:25px 0;">
+
+      <h3 style="color:#ffce00;">Contact Our Sales Team</h3>
+
+      <p>
+        Email:
+        <a href="mailto:sales@fivecrownsafetysupply.com"
+           style="color:#ffce00; overflow-wrap:anywhere;">
+          sales@fivecrownsafetysupply.com
+        </a>
+      </p>
+
+      <p>Serving Bronx, New York and surrounding areas</p>
+    </div>
+
+    <h3 style="text-align:center;">Request a Quote or Place an Inquiry</h3>
+
+    <form action="https://formspree.io/f/myewkrka"
+          method="POST"
+          style="display:grid; gap:15px; margin-top:25px;">
+
+      <input type="hidden" name="_subject"
+             value="New Five Crown Sales Inquiry">
+
+      <label>
+        Full Name *
+        <input type="text" name="name" required
+               style="width:100%; padding:12px;
+                      box-sizing:border-box;">
+      </label>
+
+      <label>
+        Company Name
+        <input type="text" name="company"
+               style="width:100%; padding:12px;
+                      box-sizing:border-box;">
+      </label>
+
+      <label>
+        Email Address *
+        <input type="email" name="email" required
+               style="width:100%; padding:12px;
+                      box-sizing:border-box;">
+      </label>
+
+      <label>
+        Phone Number
+        <input type="tel" name="phone"
+               style="width:100%; padding:12px;
+                      box-sizing:border-box;">
+      </label>
+
+      <label>
+        Customer Type
+        <select name="customer_type"
+                style="width:100%; padding:12px;">
+          <option>Individual Customer</option>
+          <option>Business / Contractor</option>
+          <option>Wholesale Buyer</option>
+        </select>
+      </label>
+
+      <label>
+        Inquiry Type
+        <select name="inquiry_type"
+                style="width:100%; padding:12px;">
+          <option>Request a Quote</option>
+          <option>Product Availability</option>
+          <option>Wholesale / Bulk Pricing</option>
+          <option>Custom Logo Safety Vests</option>
+          <option>Order Inquiry</option>
+          <option>General Question</option>
+        </select>
+      </label>
+
+      <label>
+        Product(s) Requested
+        <input type="text" name="products"
+               placeholder="Example: Safety Vests, Gloves, Cones"
+               style="width:100%; padding:12px;
+                      box-sizing:border-box;">
+      </label>
+
+      <label>
+        Quantity Needed
+        <input type="number" name="quantity" min="1"
+               placeholder="Enter quantity"
+               style="width:100%; padding:12px;
+                      box-sizing:border-box;">
+      </label>
+
+      <label>
+        Additional Details / Message *
+        <textarea name="message" rows="5" required
+                  placeholder="Tell us about your order or request..."
+                  style="width:100%; padding:12px;
+                         box-sizing:border-box;"></textarea>
+      </label>
+
+      <button type="submit"
+              style="background:#ffce00; color:#20252b;
+                     border:0; padding:16px;
+                     font-weight:bold; font-size:16px;
+                     border-radius:8px; cursor:pointer;">
+        SUBMIT SALES INQUIRY
+      </button>
+
+    </form>
+
+    <p style="text-align:center; font-size:13px;
+              color:#555; margin-top:20px;">
+      Submitting an inquiry does not constitute
+      a confirmed order. Product availability,
+      pricing, and fulfillment will be confirmed
+      by our sales team.
+    </p>
+
+  </div>
+</section>
+
 
 <p>Bulk orders and custom logo safety vests will be available by quote after supplier confirmation.</p>
 
