@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Products | Five Crown Safety Supply</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+  .product-intro {
+    text-align: center;
+  }
+
+  .product-intro h2 {
+    color: #10243e;
+    font-size: 30px;
+  }
+
+  .search-box {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card .btn {
+    margin-top: auto;
+    text-align: center;
+  }
+
+  .notice {
+    background: #fff5cc;
+    border-left: 4px solid #ffce00;
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+
+  .total {
+    font-weight: bold;
+    color: #10243e;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="crowns">♛ ♛ ♛ ♛ ♛</div>
+  <h1>FIVE CROWN SAFETY SUPPLY</h1>
+  <p>Protection You Can Count On.</p>
+</header>
+
+<nav aria-label="Main navigation">
+  <a href="home-new.html">Home</a>
+  <a href="products.html" class="active">Products</a>
+  <a href="about.html">About Us</a>
+  <a href="bulk-orders.html">Bulk Orders</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+
+<div class="hero">
+  <h2>OUR PRODUCTS</h2>
+  <p>Industrial Safety & Workplace Essentials</p>
+  <p>Retail • Wholesale • Contractor Supplies</p>
+</div>
+
+<main>
+
+<section>
+
+  <div class="product-intro">
+    <h2>Shop Our Product Catalog</h2>
+    <p>
+      Explore our developing selection of industrial
+      safety supplies and workplace essentials.
+    </p>
+  </div>
+
+  <div class="notice">
+    <strong>Product Availability & Pricing</strong>
+    <p>
+      All listed prices are preliminary estimates.
+      Contact our sales team to confirm pricing,
+      product specifications and availability.
+    </p>
+  </div>
+
+  <div class="search-box">
+    <label for="search">Search Our Products</label>
+
+    <input
+      type="search"
+      id="search"
+      placeholder="Search gloves, vests, cones..."
+      oninput="render()">
+  </div>
+
+  <p id="results" aria-live="polite"></p>
+
+  <div class="grid" id="catalog"></div>
+
+</section>
+
+<section style="text-align:center;">
+  <h2>Looking for Bulk Pricing?</h2>
+
+  <p>
+    Contact us for wholesale quantities,
+    contractor orders and custom-logo safety vests.
+  </p>
+
+  <a href="bulk-orders.html" class="btn">
+    REQUEST BULK PRICING
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <h3>Five Crown Safety Supply</h3>
+  <p>Bronx, New York</p>
+
+  <p>
+    <a href="mailto:sales@fivecrownsafetysupply.com">
+      sales@fivecrownsafetysupply.com
+    </a>
+  </p>
+
+  <p>Protection You Can Count On.</p>
+  <p>&copy; 2026 Five Crown Safety Supply.</p>
+</footer>
+
+<script>
+
+const products = [
+
+  ["Terry Cloth Rags", "🧺", 18.99],
+  ["Safety Glasses", "🥽", 4.99],
+  ["Reflective Safety Vest", "🦺", 10.99],
+  ["Industrial Work Gloves", "🧤", 5.49],
+  ["Contractor Markers", "🖊️", 2.99],
+  ["Paint Markers", "🖍️", 5.99],
+  ["Glove Holders", "🔗", 3.49],
+  ["Custom Logo Safety Vests", "🦺", 14.99],
+  ["18-Inch Safety Cones", "🚧", 15.99],
+  ["28-Inch Safety Cones", "🚧", 27.99],
+  ["Safety Barriers", "🚧", 89.99],
+  ["Retractable Barriers", "🚧", 49.99],
+  ["32-Gallon Trash Cans", "🗑️", 39.99],
+  ["44-Gallon Trash Cans", "🗑️", 54.99],
+  ["33-Gallon Can Liners", "🗑️", 29.99],
+  ["Contractor Trash Bags", "🗑️", 39.99]
+
+];
+
+function render() {
+
+  const query = document
+    .getElementById("search")
+    .value.toLowerCase();
+
+  const filtered = products.filter(
+    p => p[0].toLowerCase().includes(query)
+  );
+
+  document.getElementById("results").textContent =
+    filtered.length + " products found";
+
+  document.getElementById("catalog").innerHTML =
+    filtered.map(p => `
+
+      <div class="card">
+
+        <div class="photo">${p[1]}</div>
+
+        <h3>${p[0]}</h3>
+
+        <small>Sample retail price</small>
+
+        <p class="price">
+          $${p[2].toFixed(2)}
+        </p>
+
+        <label>
+          Quantity
+          <input
+            type="number"
+            class="quantity"
+            min="1"
+            value="1"
+            oninput="update(this, ${p[2]})">
+        </label>
+
+        <p class="total">
+          Estimated total: $${p[2].toFixed(2)}
+        </p>
+
+        <small>
+          Estimated quantity discounts:<br>
+          12+ units: 12%<br>
+          50+ units: 22%<br>
+          100+ units: 30%
+        </small>
+
+        <p>
+          <small>Supplier availability pending</small>
+        </p>
+
+        <button class="btn"
+          onclick="inquire(this, '${p[0]}')">
+          REQUEST A QUOTE
+        </button>
+
+      </div>
+
+    `).join("");
+
+  if (filtered.length === 0) {
+    document.getElementById("catalog").innerHTML =
+      "<p>No matching products found.</p>";
+  }
+
+}
+
+function update(el, base) {
+
+  const qty = Math.max(
+    1, Math.floor(Number(el.value) || 1)
+  );
+
+  const discount =
+    qty >= 100 ? 0.30 :
+    qty >= 50 ? 0.22 :
+    qty >= 12 ? 0.12 : 0;
+
+  const unit = Math.round(
+    base * (1 - discount) * 100
+  ) / 100;
+
+  el.closest(".card")
+    .querySelector(".total").textContent =
+      "Estimated total: $" +
+      (unit * qty).toFixed(2) +
+      " ($" + unit.toFixed(2) + "/unit)";
+
+}
+
+function inquire(button, product) {
+
+  const quantity = Math.max(
+    1,
+    Math.floor(Number(
+      button.closest(".card")
+      .querySelector(".quantity").value
+    ) || 1)
+  );
+
+  window.location.href =
+    "contact.html?product=" +
+    encodeURIComponent(product) +
+    "&quantity=" +
+    encodeURIComponent(quantity);
+
+}
+
+render();
+
+</script>
+
+</body>
+</html>
