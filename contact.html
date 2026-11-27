@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contact Us | Five Crown Safety Supply</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.contact-container {
+  max-width: 850px;
+  margin: auto;
+}
+
+.contact-form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  color: #10243e;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  font-size: 17px;
+  padding: 17px;
+  margin-top: 15px;
+}
+
+.contact-info {
+  text-align: center;
+  line-height: 1.8;
+}
+
+.contact-info a {
+  color: #10243e;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.notice {
+  background: #fff5cc;
+  border-left: 4px solid #ffce00;
+  padding: 18px;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .contact-form {
+    padding: 18px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+  <div class="brand-header">
+
+    <img src="logo.png"
+         alt="Five Crown Safety Supply Logo"
+         class="brand-logo">
+
+    <div class="brand-name">
+      <h1>FIVE CROWN SAFETY SUPPLY</h1>
+      <p class="tagline">
+        Protection You Can Count On.
+      </p>
+    </div>
+
+    <img src="logo.png"
+         alt=""
+         class="brand-logo">
+
+  </div>
+</header>
+
+
+<nav aria-label="Main navigation">
+
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About Us</a>
+  <a href="bulk-orders.html">Bulk Orders</a>
+  <a href="contact.html" class="active">Contact Us</a>
+
+</nav>
+
+<main>
+
+<div class="hero">
+
+  <h2>CONTACT OUR SALES TEAM</h2>
+
+  <p>
+    Product Inquiries • Bulk Pricing • Business Accounts
+  </p>
+
+  <strong>
+    We Look Forward to Earning Your Business.
+  </strong>
+
+</div>
+
+<section class="contact-info">
+
+  <h2>Get in Touch</h2>
+
+  <p>
+    Have questions about our products,
+    pricing or business purchasing options?
+    Submit an inquiry below.
+  </p>
+
+  <p>
+    <strong>Sales Department</strong><br>
+
+    <a href="mailto:sales@fivecrownsafetysupply.com">
+      sales@fivecrownsafetysupply.com
+    </a>
+  </p>
+
+  <p>Based in Bronx, New York</p>
+
+</section>
+
+<section class="contact-container">
+
+<div class="contact-form">
+
+  <h2 style="color:#10243e;">
+    Contact & Order Inquiries
+  </h2>
+
+  <p>
+    Complete the form below and our sales
+    team will review your request.
+  </p>
+
+  <small>* Indicates a required field.</small>
+
+  <form action="https://formspree.io/f/myewkrka"
+        method="POST">
+
+    <input type="hidden"
+           name="_subject"
+           value="New Five Crown Sales Inquiry">
+
+    <div class="form-grid">
+
+      <div>
+        <label for="name">Full Name *</label>
+        <input type="text"
+               id="name"
+               name="Full Name"
+               autocomplete="name"
+               required>
+      </div>
+
+      <div>
+        <label for="company">Company Name</label>
+        <input type="text"
+               id="company"
+               name="Company Name"
+               autocomplete="organization">
+      </div>
+
+      <div>
+        <label for="email">Email Address *</label>
+        <input type="email"
+               id="email"
+               name="email"
+               autocomplete="email"
+               required>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="tel"
+               id="phone"
+               name="Phone Number"
+               autocomplete="tel">
+      </div>
+
+      <div>
+        <label for="customer">Customer Type *</label>
+
+        <select id="customer"
+                name="Customer Type"
+                required>
+
+          <option value="">Select customer type</option>
+          <option>Individual Customer</option>
+          <option>Small Business</option>
+          <option>Construction Contractor</option>
+          <option>Warehouse / Distribution</option>
+          <option>Transportation / Logistics</option>
+          <option>Property Management</option>
+          <option>Cleaning / Janitorial</option>
+          <option>Government / Municipality</option>
+          <option>Other</option>
+
+        </select>
+      </div>
+
+      <div>
+        <label for="inquiry">Inquiry Type *</label>
+
+        <select id="inquiry"
+                name="Inquiry Type"
+                required>
+
+          <option value="">Select inquiry type</option>
+          <option value="product">Product Inquiry</option>
+          <option value="quote">Request a Quote</option>
+          <option value="bulk">Bulk / Wholesale Pricing</option>
+          <option value="custom">Custom Logo Safety Vests</option>
+          <option value="business">Business Purchasing Account</option>
+          <option value="recurring">Recurring Supply Orders</option>
+          <option value="general">General Inquiry</option>
+          <option value="other">Other</option>
+
+        </select>
+      </div>
+
+      <div>
+        <label for="product">Product Interested In</label>
+
+        <select id="product" name="Product">
+
+          <option value="">Select a product</option>
+          <option>Terry Cloth Rags</option>
+          <option>Safety Glasses</option>
+          <option>Reflective Safety Vest</option>
+          <option>Industrial Work Gloves</option>
+          <option>Contractor Markers</option>
+          <option>Paint Markers</option>
+          <option>Glove Holders</option>
+          <option>Custom Logo Safety Vests</option>
+          <option>18-Inch Safety Cones</option>
+          <option>28-Inch Safety Cones</option>
+          <option>Safety Barriers</option>
+          <option>Retractable Barriers</option>
+          <option>32-Gallon Trash Cans</option>
+          <option>44-Gallon Trash Cans</option>
+          <option>33-Gallon Can Liners</option>
+          <option>Contractor Trash Bags</option>
+          <option>Multiple Products</option>
+          <option>Other</option>
+
+        </select>
+      </div>
+
+      <div>
+        <label for="quantity">Estimated Quantity</label>
+
+        <input type="number"
+               id="quantity"
+               name="Quantity"
+               min="1"
+               step="1"
+               placeholder="Enter quantity">
+      </div>
+
+      <div>
+        <label for="city">Delivery City</label>
+
+        <input type="text"
+               id="city"
+               name="Delivery City">
+      </div>
+
+      <div>
+        <label for="zip">Delivery ZIP Code</label>
+
+        <input type="text"
+               id="zip"
+               name="Delivery ZIP Code"
+               inputmode="numeric"
+               autocomplete="postal-code">
+      </div>
+
+    </div>
+
+    <label for="message">
+      Message / Additional Information
+    </label>
+
+    <textarea id="message"
+              name="Message"
+              placeholder="Tell us about your product needs, quantities, sizes, custom logo requirements or delivery preferences."></textarea>
+
+    <button type="submit"
+            class="btn submit-button">
+
+      SUBMIT SALES INQUIRY
+
+    </button>
+
+  </form>
+
+  <div class="notice">
+
+    <strong>Important Information</strong>
+
+    <p>
+      Submitting an inquiry does not constitute
+      a confirmed order. All pricing, availability,
+      shipping charges and lead times are subject
+      to confirmation by our sales team.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <h3>Five Crown Safety Supply</h3>
+
+  <p>Bronx, New York</p>
+
+  <p>
+    <a href="mailto:sales@fivecrownsafetysupply.com">
+      sales@fivecrownsafetysupply.com
+    </a>
+  </p>
+
+  <p>Protection You Can Count On.</p>
+
+  <p>
+    &copy; 2026 Five Crown Safety Supply.
+    All Rights Reserved.
+  </p>
+
+</footer>
+
+<script>
+
+const params = new URLSearchParams(
+  window.location.search
+);
+
+const product = params.get("product");
+const quantity = params.get("quantity");
+const inquiry = params.get("inquiry");
+
+if (product) {
+  document.getElementById("product").value = product;
+  document.getElementById("inquiry").value = "quote";
+}
+
+if (quantity && Number(quantity) >= 1) {
+  document.getElementById("quantity").value =
+    Math.floor(Number(quantity));
+}
+
+if (inquiry) {
+  const select = document.getElementById("inquiry");
+
+  if (Array.from(select.options).some(
+    option => option.value === inquiry
+  )) {
+    select.value = inquiry;
+  }
+}
+
+if (inquiry === "custom") {
+  document.getElementById("product").value =
+    "Custom Logo Safety Vests";
+}
+
+</script>
+
+</body>
+</html>

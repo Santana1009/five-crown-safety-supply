@@ -1,466 +1,296 @@
+
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>Five Crown Safety Supply | Home</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Five Crown Safety Supply provides industrial safety supplies, personal protective equipment and workplace essentials in New York.">
 
-<title>Five Crown Safety Supply</title>
+  <link rel="stylesheet" href="style.css">
 
-<style>
+  <style>
+    .brand-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-*{box-sizing:border-box}
+    .brand-logo {
+      width: 130px;
+      max-width: 20%;
+      height: auto;
+    }
 
-body{margin:0;font-family:Arial,sans-serif;color:#222}
+    .brand-name {
+      flex: 1;
+      text-align: center;
+    }
 
-header{background:#20252b;color:white;padding:22px;text-align:center}
+    .tagline {
+      color: #ffce00;
+      font-weight: bold;
+    }
 
-header h1{margin:5px 0;font-size:26px}
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
 
-.crowns{color:#ffce00;font-size:27px}
+    .category-card {
+      text-align: center;
+    }
 
-nav{background:#ffce00;padding:14px;text-align:center}
+    .category-card h3 {
+      color: #10243e;
+    }
 
-nav a{color:#171717;font-weight:bold;margin:0 10px;text-decoration:none}
+    .category-icon {
+      font-size: 45px;
+    }
 
-.hero{background:#303740;color:white;text-align:center;padding:55px 18px}
+    .section-title {
+      text-align: center;
+      color: #10243e;
+    }
 
-.hero h2{font-size:34px;margin:0}
+    .company-intro {
+      text-align: center;
+      line-height: 1.8;
+    }
 
-.hero strong{color:#ffce00}
+    .quote-section {
+      background: #e8edf3;
+      text-align: center;
+      max-width: none;
+    }
 
-.btn{background:#ffce00;color:#111;border:0;padding:12px 18px;border-radius:5px;font-weight:bold;cursor:pointer}
+    @media (max-width: 600px) {
+      .brand-logo {
+        width: 65px;
+      }
 
-section{padding:28px 18px;max-width:1100px;margin:auto}
+      .brand-name h1 {
+        font-size: 19px;
+      }
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
-
-.card{border:1px solid #ddd;border-radius:9px;padding:16px}
-
-.photo{background:#f1f2f4;text-align:center;font-size:55px;padding:22px}
-
-.price{font-size:21px;font-weight:bold}
-
-small{color:#666}
-
-input{padding:10px;width:100%;margin:10px 0;font-size:16px}
-
-footer{background:#20252b;color:white;text-align:center;padding:25px}
-
-</style>
-
+      .tagline {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
+  <div class="brand-header">
 
-<div class="crowns">♛ ♛ ♛ ♛ ♛</div>
+    <img src="logo.png"
+         alt="Five Crown Safety Supply Logo"
+         class="brand-logo"
+         onerror="this.style.visibility='hidden'">
 
-<h1>FIVE CROWN SAFETY SUPPLY</h1>
+    <div class="brand-name">
+      <h1>FIVE CROWN SAFETY SUPPLY</h1>
+      <p class="tagline">
+        Protection You Can Count On.
+      </p>
+    </div>
 
-<p>Protection You Can Count On.</p>
+    <img src="logo.png"
+         alt=""
+         class="brand-logo"
+         onerror="this.style.visibility='hidden'">
 
+  </div>
 </header>
 
-<nav>
-
-<a href="#home">Home</a>
-
-<a href="#products">Products</a>
-
-<a href="#about">About</a>
-
-<a href="#contact">Contact</a>
-
+<nav aria-label="Main navigation">
+  <a href="index.html" class="active">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About Us</a>
+  <a href="bulk-orders.html">Bulk Orders</a>
+  <a href="contact.html">Contact Us</a>
 </nav>
 
-<div class="hero" id="home">
+<main>
 
-<h2>INDUSTRIAL <strong>SAFETY SUPPLIES</strong></h2>
+  <div class="hero">
+    <h2>INDUSTRIAL SAFETY SUPPLIES</h2>
 
-<p>Retail • Wholesale • Contractor Supplies</p>
-
-<p>Safety equipment and workplace essentials for businesses and individuals.</p>
-
-<a href="#products"><button class="btn">SHOP PRODUCTS</button></a>
-
-</div>
-
-<section id="products">
-
-<h2>Shop Products</h2>
-
-<p>Browse our developing product catalog.</p>
-
-<input id="search" placeholder="Search products..." oninput="render()">
-
-<div class="grid" id="catalog"></div>
-
-</section>
-
-<section id="about" style="background:#f7f7f7; padding:55px 20px; color:#20252b;">
-  <div style="max-width:950px; margin:auto;">
-
-    <h2 style="text-align:center; font-size:32px;">
-      About Us
-    </h2>
-
-    <p style="text-align:center; font-weight:bold; color:#a67c00;">
-      Family-Owned. Built on Trust. Committed to Safety.
+    <p>
+      Dependable workplace protection for
+      businesses, contractors and hardworking
+      professionals.
     </p>
 
     <p>
-      At <strong>Five Crown Safety Supply</strong>, family is at
-      the heart of everything we do. Founded in the Bronx,
-      New York, our family-operated business was built on
-      the belief that every hardworking individual deserves
-      reliable safety products, quality service, and a
-      company they can trust.
+      <strong>
+        Quality. Reliability. Protection.
+      </strong>
     </p>
 
-    <p>
-      We understand the importance of protecting what
-      matters most. Our mission is to help contractors,
-      warehouse professionals, construction workers,
-      and businesses create safer workplaces through
-      dependable industrial safety supplies and personal
-      protective equipment.
-    </p>
+    <div class="hero-buttons">
+      <a href="products.html" class="btn">
+        Browse Products
+      </a>
 
-    <p>
-       As a proud family-owned and operated business,
-  Five Crown Safety Supply was built on the values
-  of hard work, integrity, dedication, and trust.
-  Our commitment goes beyond providing industrial
-  safety supplies. We are building a lasting family
-  legacy while helping protect hardworking individuals
-  and supporting businesses throughout our community.
-    </p>
-
-    <h3 style="text-align:center; margin-top:35px;">
-      The Five Crowns That Guide Us
-    </h3>
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:15px; margin-top:25px;">
-
-      <div style="background:white; padding:20px; border-top:4px solid #ffce00; border-radius:10px;">
-        <h3>👑 Family</h3>
-        <p>The foundation of everything we do.</p>
-      </div>
-
-      <div style="background:white; padding:20px; border-top:4px solid #ffce00; border-radius:10px;">
-        <h3>👑 Safety</h3>
-        <p>Helping protect hardworking people.</p>
-      </div>
-
-      <div style="background:white; padding:20px; border-top:4px solid #ffce00; border-radius:10px;">
-        <h3>👑 Integrity</h3>
-        <p>Building relationships through honesty and trust.</p>
-      </div>
-
-      <div style="background:white; padding:20px; border-top:4px solid #ffce00; border-radius:10px;">
-        <h3>👑 Quality</h3>
-        <p>Striving to provide dependable products.</p>
-      </div>
-
-      <div style="background:white; padding:20px; border-top:4px solid #ffce00; border-radius:10px;">
-        <h3>👑 Commitment</h3>
-        <p>Supporting our customers and communities.</p>
-      </div>
-
+      <a href="contact.html" class="btn">
+        Request a Quote
+      </a>
     </div>
-
-    <p style="margin-top:30px;">
-      We are proud of our Bronx roots and excited to grow
-      a business that serves contractors, businesses, and
-      hardworking communities throughout New York
-      and beyond.
-    </p>
-
-    <div style="background:#20252b; color:white; text-align:center; padding:25px; border-radius:12px; margin-top:30px;">
-      <h3 style="color:#ffce00;">
-        Protection You Can Count On.
-      </h3>
-      
-<p>More than a business. A family legacy.</p>
-
-<p style="font-style:italic; margin-top:20px;
-          font-size:16px; line-height:1.7;">
-  "Commit thy works unto the LORD, and thy
-  thoughts shall be established."
-</p>
-
-<p style="color:#ffce00; font-weight:bold;
-          margin-top:8px;">
-  Proverbs 16:3 (KJV)
-</p>
-
-    </div>
-
   </div>
-</section>
 
-
-    
-
-  
-  <div style="max-width:800px; margin:auto;">
-
-    <h2 style="text-align:center;">
-      Contact &amp; Order Inquiries
+  <section>
+    <h2 class="section-title">
+      Our Product Categories
     </h2>
 
-    <p style="text-align:center;">
-      Thank you for choosing Five Crown Safety Supply!
-      We welcome retail, wholesale, and contractor
-      inquiries. Contact our sales team for product
-      information, bulk pricing, custom safety products,
-      and order requests.
-    </p>
+    <div class="grid">
 
-    <div style="background:#20252b; color:white;
-                padding:22px; border-radius:12px;
-                text-align:center; margin:25px 0;">
-
-      <h3 style="color:#ffce00;">Contact Our Sales Team</h3>
-
-      <p>
-        Email:
-        <a href="mailto:sales@fivecrownsafetysupply.com"
-           style="color:#ffce00; overflow-wrap:anywhere;">
-          sales@fivecrownsafetysupply.com
+      <div class="card category-card">
+        <div class="category-icon">🦺</div>
+        <h3>Personal Protective Equipment</h3>
+        <p>
+          Safety vests, work gloves,
+          protective eyewear and more.
+        </p>
+        <a href="products.html" class="btn">
+          View Products
         </a>
-      </p>
+      </div>
 
-      <p>Serving Bronx, New York and surrounding areas</p>
+      <div class="card category-card">
+        <div class="category-icon">🚧</div>
+        <h3>Jobsite Safety</h3>
+        <p>
+          Traffic cones, safety barriers
+          and contractor supplies.
+        </p>
+        <a href="products.html" class="btn">
+          View Products
+        </a>
+      </div>
+
+      <div class="card category-card">
+        <div class="category-icon">📦</div>
+        <h3>Industrial Supplies</h3>
+        <p>
+          Cleaning supplies, terry rags,
+          trash liners and workplace essentials.
+        </p>
+        <a href="products.html" class="btn">
+          View Products
+        </a>
+      </div>
+
     </div>
+  </section>
 
-    <h3 style="text-align:center;">Request a Quote or Place an Inquiry</h3>
+  <section class="company-intro">
+    <h2 class="section-title">
+      Family Owned. Customer Focused.
+    </h2>
 
-    <form action="https://formspree.io/f/myewkrka"
-          method="POST"
-          style="display:grid; gap:15px; margin-top:25px;">
-
-      <input type="hidden" name="_subject"
-             value="New Five Crown Sales Inquiry">
-
-      <label>
-        Full Name *
-        <input type="text" name="name" required
-               style="width:100%; padding:12px;
-                      box-sizing:border-box;">
-      </label>
-
-      <label>
-        Company Name
-        <input type="text" name="company"
-               style="width:100%; padding:12px;
-                      box-sizing:border-box;">
-      </label>
-
-      <label>
-        Email Address *
-        <input type="email" name="email" required
-               style="width:100%; padding:12px;
-                      box-sizing:border-box;">
-      </label>
-
-      <label>
-        Phone Number
-        <input type="tel" name="phone"
-               style="width:100%; padding:12px;
-                      box-sizing:border-box;">
-      </label>
-
-      <label>
-        Customer Type
-        <select name="customer_type"
-                style="width:100%; padding:12px;">
-          <option>Individual Customer</option>
-          <option>Business / Contractor</option>
-          <option>Wholesale Buyer</option>
-        </select>
-      </label>
-
-      <label>
-        Inquiry Type
-        <select name="inquiry_type"
-                style="width:100%; padding:12px;">
-          <option>Request a Quote</option>
-          <option>Product Availability</option>
-          <option>Wholesale / Bulk Pricing</option>
-          <option>Custom Logo Safety Vests</option>
-          <option>Order Inquiry</option>
-          <option>General Question</option>
-        </select>
-      </label>
-
-      <label>
-        Product(s) Requested
-        <input type="text" name="products"
-               placeholder="Example: Safety Vests, Gloves, Cones"
-               style="width:100%; padding:12px;
-                      box-sizing:border-box;">
-      </label>
-
-      <label>
-        Quantity Needed
-        <input type="number" name="quantity" min="1"
-               placeholder="Enter quantity"
-               style="width:100%; padding:12px;
-                      box-sizing:border-box;">
-      </label>
-
-      <label>
-        Additional Details / Message *
-        <textarea name="message" rows="5" required
-                  placeholder="Tell us about your order or request..."
-                  style="width:100%; padding:12px;
-                         box-sizing:border-box;"></textarea>
-      </label>
-
-      <button type="submit"
-              style="background:#ffce00; color:#20252b;
-                     border:0; padding:16px;
-                     font-weight:bold; font-size:16px;
-                     border-radius:8px; cursor:pointer;">
-        SUBMIT SALES INQUIRY
-      </button>
-
-    </form>
-
-    <p style="text-align:center; font-size:13px;
-              color:#555; margin-top:20px;">
-      Submitting an inquiry does not constitute
-      a confirmed order. Product availability,
-      pricing, and fulfillment will be confirmed
-      by our sales team.
+    <p>
+      Based in the Bronx, New York,
+      Five Crown Safety Supply is a
+      family-owned business committed to
+      quality, reliability and workplace safety.
     </p>
 
-  </div>
-</section>
+    <p>
+      Our mission is to help businesses
+      protect their employees and maintain
+      safer working environments.
+    </p>
 
+    <a href="about.html" class="btn">
+      Learn More About Us
+    </a>
+  </section>
 
-<p>Bulk orders and custom logo safety vests will be available by quote after supplier confirmation.</p>
+  <section>
+    <h2 class="section-title">
+      Industries We Serve
+    </h2>
 
-</section>
+    <div class="grid">
+      <div class="card category-card">
+        <h3>Construction</h3>
+      </div>
+
+      <div class="card category-card">
+        <h3>Warehousing & Logistics</h3>
+      </div>
+
+      <div class="card category-card">
+        <h3>Transportation</h3>
+      </div>
+
+      <div class="card category-card">
+        <h3>Property Maintenance</h3>
+      </div>
+
+      <div class="card category-card">
+        <h3>Manufacturing</h3>
+      </div>
+
+      <div class="card category-card">
+        <h3>Cleaning & Janitorial</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <h2>Need Supplies for Your Business?</h2>
+
+    <p>
+      Contact us for bulk pricing,
+      custom-logo safety vests and
+      business purchasing inquiries.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="bulk-orders.html" class="btn">
+        Bulk Order Inquiries
+      </a>
+
+      <a href="contact.html" class="btn">
+        Contact Our Sales Team
+      </a>
+    </div>
+  </section>
+
+</main>
 
 <footer>
+  <h3>Five Crown Safety Supply</h3>
 
-<b>Five Crown Safety Supply</b>
+  <p>Bronx, New York</p>
 
-<p>Bronx, New York</p>
+  <p>
+    <a href="mailto:sales@fivecrownsafetysupply.com">
+      sales@fivecrownsafetysupply.com
+    </a>
+  </p>
 
-<p>Protection You Can Count On.</p>
+  <p>Protection You Can Count On.</p>
 
+  <p>
+    &copy; 2026 Five Crown Safety Supply.
+    All Rights Reserved.
+  </p>
 </footer>
 
-<script>
-
-const products=[
-
-["Terry Cloth Rags","🧺",18.99],
-
-["Safety Glasses","🥽",4.99],
-
-["Reflective Safety Vest","🦺",10.99],
-
-["Industrial Work Gloves","🧤",5.49],
-
-["Contractor Markers","🖊️",2.99],
-
-["Paint Markers","🖍️",5.99],
-
-["Glove Holders","🔗",3.49],
-
-["Custom Logo Safety Vests","🦺",14.99],
-
-["18-Inch Safety Cones","🚧",15.99],
-
-["28-Inch Safety Cones","🚧",27.99],
-
-["Safety Barriers","🚧",89.99],
-
-["Retractable Barriers","🚧",49.99],
-
-["32-Gallon Trash Cans","🗑️",39.99],
-
-["44-Gallon Trash Cans","🗑️",54.99],
-
-["33-Gallon Can Liners","🗑️",29.99],
-
-["Contractor Trash Bags","🗑️",39.99]
-
-];
-
-function render(){
-
-let q=document.getElementById("search").value.toLowerCase();
-
-document.getElementById("catalog").innerHTML=products
-
-.filter(p=>p[0].toLowerCase().includes(q))
-
-.map((p,i)=>`
-
-<div class="card">
-
-<div class="photo">${p[1]}</div>
-
-<h3>${p[0]}</h3>
-
-<small>Sample retail price</small>
-
-<p class="price">$${p[2].toFixed(2)}</p>
-
-<label>Quantity</label>
-
-<input type="number" min="1" value="1"
-
-oninput="update(this,${p[2]})">
-
-<p class="total">Estimated total: $${p[2].toFixed(2)}</p>
-
-<small>12+ units: 12% discount<br>
-
-50+ units: 22% discount<br>
-
-100+ units: 30% discount</small>
-
-<p><small>Supplier availability pending</small></p>
-
-<button class="btn" disabled>Order Inquiry Coming Soon</button>
-
-</div>`).join("");
-
-}
-
-function update(el,base){
-
-let qty=Math.max(1,Math.floor(Number(el.value)||1));
-
-let discount=qty>=100?.30:qty>=50?.22:qty>=12?.12:0;
-
-let unit=Math.round(base*(1-discount)*100)/100;
-
-el.parentElement.querySelector(".total").textContent=
-
-"Estimated total: $"+(unit*qty).toFixed(2)+
-
-" ($"+unit.toFixed(2)+"/unit)";
-
-}
-
-render();
-
-</script>
-
 </body>
-
 </html>
-
-
